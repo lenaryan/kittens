@@ -26,7 +26,35 @@
 
             <div class="content">
                 <div class="filter">
+                    <div class="filter__block filter__block--price">
+                        <p class="filter__title">Цена за сутки, ₽</p>
+                        <div class="filter__inputs">
+                            <input type="text" class="filter__input" placeholder="от 100">
+                            <input type="text" class="filter__input" placeholder="до 600">
+                        </div>
+                    </div>
+                    
+                    <div class="filter__block filter__block--square">
+                        <p class="filter__title">Площадь</p>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">0,63 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">0,90 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">1,13 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">1,56 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">2,56 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">2,88 м2</label>
+                    </div>
 
+                    <div class="filter__block filter__block--equip">
+                        <p class="filter__title">Оснащение номера</p>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">Пустой номер</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">Лежак</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">Когтеточка</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">Игровой комплекс</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check">Домик</label>
+                    </div>
+
+                    <button class="filter__btn apply-btn">Применить</button>
+                    <button class="filter__btn reset-btn">Сбросить фильтр</button>
                 </div>
                 <div class="rooms">
                     <div class="room rooms__item">

@@ -4,10 +4,89 @@ main {
     padding-bottom: 150px;
 }
 
+/* filter */
+
+.filter {
+    margin-right: 90px;
+    width: 210px;
+}
+
+.filter__block {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.filter__block--price {
+    margin-bottom: 35px;
+}
+
+.filter__title {
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.filter__inputs {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.filter__input {
+    border: 1px solid #E1E1E1;
+    width: 100px;
+    padding: 7px 5px;
+    box-sizing: border-box;
+}
+
+.filter__label {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.filter__check {
+    margin-right: 10px;
+}
+
+.filter__btn {
+    border-radius: 25px;
+    border: 2px solid #FAC663;
+    width: 185px;
+    padding: 12px;
+    font-family: 'Lato',sans-serif;
+    font-size: 14px;
+    line-height: 1;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.apply-btn {
+    margin-bottom: 10px;
+    background-color: #fac663;
+}
+
+.reset-btn {
+    background-color: #fff;
+}
+
+.filter__btn:hover {
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.filter__btn:focus {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+/* cards */
+
 .rooms {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     grid-gap: 30px 20px;
+    flex: 1;
 }
 
 .room {

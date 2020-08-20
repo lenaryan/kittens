@@ -79,3 +79,9 @@ h1 {
     font-size: 36px;
     line-height: 1.2;
 }
+
+.content {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
