@@ -7,8 +7,10 @@ const del = require('del');
 const browserSync = require('browser-sync').create();
 
 const cssFiles = [
+    './src/css/common.css',
+    './src/css/header.css',
     './src/css/main.css',
-    './src/css/media.css'
+    './src/css/footer.css'
 ]
 
 const jsFiles = [
