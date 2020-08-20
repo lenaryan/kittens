@@ -36,9 +36,22 @@ main {
 }
 
 .room__square,
-.room__equip,
 .room__size {
     margin-bottom: 10px;
+}
+
+.room__equip {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: baseline;
+}
+
+.equip__title {
+    margin-right: 12px;
+}
+
+.equip__icon {
+    margin-right: 8px;
 }
 
 .price {
