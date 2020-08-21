@@ -117,3 +117,19 @@ document.addEventListener('DOMContentLoaded', function() {
         resetBtn.removeAttribute('style');
     })
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.header__burger').addEventListener('click', () => {
+        document.querySelector('.nav').classList.add('show-menu');
+        document.querySelector('.nav').classList.remove('hide-menu');
+        document.querySelector('.header__burger').style.display = "none";
+        document.querySelector('.header__cross').style.display = "block";
+    })
+
+    document.querySelector('.header__cross').addEventListener('click', () => {
+        document.querySelector('.nav').classList.remove('show-menu');
+        document.querySelector('.nav').classList.add('hide-menu');
+        document.querySelector('.header__burger').style.display = "block";
+        document.querySelector('.header__cross').style.display = "none";
+    })
+})
