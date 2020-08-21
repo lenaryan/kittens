@@ -54,6 +54,7 @@ body {
     margin: 0 auto;
     padding: 0 15px;
     max-width: 1170px;
+    box-sizing: border-box;
 }
 
 p {

@@ -10,7 +10,8 @@ const cssFiles = [
     './src/css/common.css',
     './src/css/header.css',
     './src/css/main.css',
-    './src/css/footer.css'
+    './src/css/footer.css',
+    './src/css/adaptive.css'
 ]
 
 const jsFiles = [

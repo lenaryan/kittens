@@ -1,0 +1,131 @@
+@media (max-width: 1280px) {
+    .filter {
+        margin-right: 60px;
+    }
+}
+
+@media (max-width: 850px) {
+    main {
+        padding-top: 40px;
+        padding-bottom: 100px;
+    }
+
+    .content {
+        display: block;
+    }
+
+    h1 {
+        margin-bottom: 30px;
+        font-size: 34px;
+    }
+
+    .filter {
+        margin-right: 0;
+        width: 100%;
+        margin-bottom: 25px;
+    }
+
+    .filter__block {
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-bottom: 10px;
+    }
+
+    .filter__block--price {
+        margin-bottom: 25px;
+    }
+
+    .filter__input {
+        margin-right: 10px;
+    }
+
+    .filter__title {
+        width: 100%;
+    }
+
+    .filter__label {
+        margin-right: 20px;
+    }
+
+    .filter__btns {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .filter__btn {
+        margin-right: 10px;
+        margin-left: 10px;
+        margin-bottom: 10px;
+    }    
+}
+
+@media (max-width: 640px) {
+    h1 {
+        margin-bottom: 25px;
+        font-size: 30px;
+    }
+
+    .filter__label {
+        margin-bottom: 10px;
+    }
+
+    .room__title {
+        font-size: 19px;
+        margin: 20px 15px 15px;
+    }
+
+    .room__conditions {
+        margin: auto 15px 0;
+    }
+
+    .room__book {
+        margin: 20px 15px;
+    }
+
+    .book-btn {
+        padding: 4px;
+    }
+
+    .rooms {
+        grid-gap: 25px 15px;
+    }
+
+    .footer__container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer__copy {
+        margin-right: 0;
+        margin-bottom: 3px;
+    }
+
+    .confidential {
+        font-weight: 600;
+        margin-bottom: 3px;
+    }
+
+    .footer__made {
+        margin-left: unset;
+    }
+}
+
+@media (max-width: 430px) {
+    main {
+        padding-bottom: 80px;
+    }
+    
+    h1 {
+        margin-bottom: 20px;
+        font-size: 28px;
+    }
+
+    .rooms {
+        grid-gap: 20px;
+    }
+}
