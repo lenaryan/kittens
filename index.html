@@ -36,28 +36,28 @@
                     
                     <div class="filter__block filter__block--square">
                         <p class="filter__title">Площадь</p>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">0,63 м2</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">0,90 м2</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">1,13 м2</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">1,56 м2</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">2,56 м2</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">2,88 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-square="0.63">0,63 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-square="0.90">0,90 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-square="1.13">1,13 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-square="1.56">1,56 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-square="2.56">2,56 м2</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-square="2.88">2,88 м2</label>
                     </div>
 
                     <div class="filter__block filter__block--equip">
                         <p class="filter__title">Оснащение номера</p>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">Пустой номер</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">Лежак</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">Когтеточка</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">Игровой комплекс</label>
-                        <label class="filter__label"><input type="checkbox" class="filter__check">Домик</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-equip="0">Пустой номер</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-equip="1">Лежак</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-equip="2">Когтеточка</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-equip="3">Игровой комплекс</label>
+                        <label class="filter__label"><input type="checkbox" class="filter__check" data-equip="4">Домик</label>
                     </div>
 
                     <button class="filter__btn apply-btn">Применить</button>
                     <button class="filter__btn reset-btn">Сбросить фильтр</button>
                 </div>
                 <div class="rooms">
-                    <div class="room rooms__item">
+                    <div class="room rooms__item" data-square="0.63">
                         <picture>
                             <source type="image/webp" srcset="/src/img/econom.webp">
                             <img src="/src/img/econom.png" alt="Эконом" class="room__pic">
@@ -76,7 +76,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
                     
-                    <div class="room rooms__item">
+                    <div class="room rooms__item" data-square="0.90">
                         <picture>
                             <source type="image/webp" srcset="/src/img/econom-plus.webp 1x, /src/img/econom-plus@2x.webp 2x, /src/img/econom-plus@4x.webp 4x">
                             <img src="/src/img/econom-plus.png" srcset="/src/img/econom-plus@2x.png 2x, /src/img/econom-plus@4x.png 4x" alt="Эконом плюс" class="room__pic">
@@ -99,7 +99,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item">
+                    <div class="room rooms__item" data-square="1.13">
                         <picture>
                             <source type="image/webp" srcset="/src/img/comfort.webp 1x, /src/img/comfort@2x.webp 2x, /src/img/comfort@4x.webp 4x">
                             <img src="/src/img/comfort.png" srcset="/src/img/comfort@2x.png 2x, /src/img/comfort@4x.png 4x" alt="Комфорт" class="room__pic">
@@ -125,7 +125,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item">
+                    <div class="room rooms__item" data-square="1.56">
                         <picture>
                             <source type="image/webp" srcset="/src/img/suit.webp 1x, /src/img/suit@2x.webp 2x, /src/img/suit@4x.webp 4x">
                             <img src="/src/img/suit.png" srcset="/src/img/suit@2x.png 2x, /src/img/suit@4x.png 4x" alt="Сьют" class="room__pic">
@@ -151,7 +151,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item">
+                    <div class="room rooms__item" data-square="2.56">
                         <picture>
                             <source type="image/webp" srcset="/src/img/lux.webp 1x, /src/img/lux@2x.webp 2x, /src/img/lux@4x.webp 4x">
                             <img src="/src/img/lux.png" srcset="/src/img/lux@2x.png 2x, /src/img/lux@4x.png 4x" alt="Люкс" class="room__pic">
@@ -180,7 +180,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item">
+                    <div class="room rooms__item" data-square="2.88">
                         <picture>
                             <source type="image/webp" srcset="/src/img/superlux.webp 1x, /src/img/superlux@2x.webp 2x, /src/img/superlux@4x.webp 4x">
                             <img src="/src/img/superlux.png" srcset="/src/img/superlux@2x.png 2x, /src/img/superlux@4x.png 4x" alt="Супер-Люкс" class="room__pic">
