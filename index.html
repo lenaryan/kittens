@@ -29,8 +29,8 @@
                     <div class="filter__block filter__block--price">
                         <p class="filter__title">Цена за сутки, ₽</p>
                         <div class="filter__inputs">
-                            <input type="text" class="filter__input" placeholder="от 100">
-                            <input type="text" class="filter__input" placeholder="до 600">
+                            <input type="number" class="filter__input filter__input--min" placeholder="от 100" min="100" max="600">
+                            <input type="number" class="filter__input filter__input--max" placeholder="до 600" min="100" max="600">
                         </div>
                     </div>
                     
@@ -57,7 +57,7 @@
                     <button class="filter__btn reset-btn">Сбросить фильтр</button>
                 </div>
                 <div class="rooms">
-                    <div class="room rooms__item" data-square="0.63">
+                    <div class="room rooms__item" data-square="0.63" data-price="100">
                         <picture>
                             <source type="image/webp" srcset="/src/img/econom.webp">
                             <img src="/src/img/econom.png" alt="Эконом" class="room__pic">
@@ -76,7 +76,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
                     
-                    <div class="room rooms__item" data-square="0.90">
+                    <div class="room rooms__item" data-square="0.90" data-price="200">
                         <picture>
                             <source type="image/webp" srcset="/src/img/econom-plus.webp 1x, /src/img/econom-plus@2x.webp 2x, /src/img/econom-plus@4x.webp 4x">
                             <img src="/src/img/econom-plus.png" srcset="/src/img/econom-plus@2x.png 2x, /src/img/econom-plus@4x.png 4x" alt="Эконом плюс" class="room__pic">
@@ -99,7 +99,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item" data-square="1.13">
+                    <div class="room rooms__item" data-square="1.13" data-price="250">
                         <picture>
                             <source type="image/webp" srcset="/src/img/comfort.webp 1x, /src/img/comfort@2x.webp 2x, /src/img/comfort@4x.webp 4x">
                             <img src="/src/img/comfort.png" srcset="/src/img/comfort@2x.png 2x, /src/img/comfort@4x.png 4x" alt="Комфорт" class="room__pic">
@@ -125,7 +125,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item" data-square="1.56">
+                    <div class="room rooms__item" data-square="1.56" data-price="350">
                         <picture>
                             <source type="image/webp" srcset="/src/img/suit.webp 1x, /src/img/suit@2x.webp 2x, /src/img/suit@4x.webp 4x">
                             <img src="/src/img/suit.png" srcset="/src/img/suit@2x.png 2x, /src/img/suit@4x.png 4x" alt="Сьют" class="room__pic">
@@ -151,7 +151,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item" data-square="2.56">
+                    <div class="room rooms__item" data-square="2.56" data-price="500">
                         <picture>
                             <source type="image/webp" srcset="/src/img/lux.webp 1x, /src/img/lux@2x.webp 2x, /src/img/lux@4x.webp 4x">
                             <img src="/src/img/lux.png" srcset="/src/img/lux@2x.png 2x, /src/img/lux@4x.png 4x" alt="Люкс" class="room__pic">
@@ -180,7 +180,7 @@
                         <a href="#" class="room__book book-btn"><span class="book-btn__text">Забронировать</span><img src="/src/img/paw.svg" alt="Забронировать" class="book-btn__icon"></a>
                     </div>
 
-                    <div class="room rooms__item" data-square="2.88">
+                    <div class="room rooms__item" data-square="2.88" data-price="600">
                         <picture>
                             <source type="image/webp" srcset="/src/img/superlux.webp 1x, /src/img/superlux@2x.webp 2x, /src/img/superlux@4x.webp 4x">
                             <img src="/src/img/superlux.png" srcset="/src/img/superlux@2x.png 2x, /src/img/superlux@4x.png 4x" alt="Супер-Люкс" class="room__pic">
