@@ -12,10 +12,15 @@ document.addEventListener('DOMContentLoaded', function() {
         squareElems.forEach(elem => checkedSquare.push(elem.dataset.square))
         
         rooms.forEach(room => {
-            room.classList.add("hide-room");
+            room.classList.remove("show-room");
+            if (!room.classList.contains("hide-room")) {
+                room.classList.add("hide-room");
+                room.style.display = "none";
+            }
             if (checkedSquare.includes(room.dataset.square)) {
-                room.classList.remove('hide-room');
+                room.style.display = "block";
                 room.classList.add('show-room');
+                room.classList.remove('hide-room');
             } 
         })
     })
