@@ -26,11 +26,6 @@ document.addEventListener('DOMContentLoaded', function() {
             squareElems.forEach(elem => checkedSquare.push(elem.dataset.square));
 
             rooms.forEach(room => {
-                // room.classList.remove("show-room");
-                // if (!room.classList.contains("hide-room")) {
-                //     room.classList.add("hide-room");
-                //     room.style.display = "none";
-                // }
                 if (checkedSquare.includes(room.dataset.square)) {
                     room.style.display = "flex";
                     room.classList.add('show-room');
@@ -80,6 +75,21 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
 
+        //selected equipment part only
+        if (equipElems.length && !squareElems.length && !minPrice.value && !maxPrice.value) {
+            let checkedEquip = [];
+
+            //get an array of selected equipment
+            equipElems.forEach(elem => checkedEquip.push(elem.dataset.equip));
+
+            rooms.forEach(room => {
+                if (checkedEquip.some((index) => room.dataset.equip.includes(index))) {
+                    room.style.display = "flex";
+                    room.classList.add('show-room');
+                    room.classList.remove('hide-room');
+                }  
+            })
+        }
 
         if (squareElems.length || equipElems.length || minPrice.value || maxPrice.value) {
             resetBtn.style.display = 'block';
