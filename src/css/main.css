@@ -69,6 +69,7 @@ main {
 
 .reset-btn {
     background-color: #fff;
+    display: none;
 }
 
 .filter__btn:hover {
