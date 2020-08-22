@@ -48,8 +48,31 @@ main {
     cursor: pointer;
 }
 
-.filter__check {
+.filter__check-wrap {
     margin-right: 10px;
+    position: relative;
+}
+
+.filter__check-wrap:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: white;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #e1e1e1;
+}
+
+.filter__check-wrap--checked:after {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url(/src/img/black-tick.svg);
+}
+
+.filter__check:focus {
+    outline-offset: 5px;
 }
 
 .filter__btn {

@@ -150,3 +150,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     })
 })
+
+//add class for custom check-uncheck checkboxes
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.filter__check').forEach(filterCheck => {
+        filterCheck.addEventListener('click', () => {
+            filterCheck.parentNode.classList.toggle('filter__check-wrap--checked');
+        })
+    })
+})
