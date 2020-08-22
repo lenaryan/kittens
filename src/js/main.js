@@ -105,6 +105,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     })
 
+    //reset filter
     resetBtn.addEventListener('click', () => {
         rooms.forEach(room => {
             room.classList.remove("hide-room");
@@ -114,10 +115,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
         document.querySelectorAll('.filter__check:checked').forEach(checkbox => checkbox.checked = false);
         document.querySelectorAll('.filter__input').forEach(input => input.value = null);
+        document.querySelectorAll('.filter__check-wrap--checked').forEach(input => input.classList.remove("filter__check-wrap--checked"));
         resetBtn.removeAttribute('style');
     })
 })
 
+//open-close mobile menu
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.header__burger').addEventListener('click', () => {
         document.querySelector('.nav').classList.add('show-menu');
@@ -160,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
+//open-close sorting dropdown 
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('.sort__btn').addEventListener('click', () => {
         document.querySelector('.sort__options').style.display = "block";
@@ -172,5 +176,27 @@ document.addEventListener('DOMContentLoaded', function() {
             document.querySelector('.sort__options').style.display = "none";
             document.querySelector('.sort__arrow').classList.remove('rotate-arrow');
         })
+    })
+})
+
+document.addEventListener('DOMContentLoaded', function() {
+    let rooms = document.querySelector('.rooms');
+    let arr = [];
+    let roomsArr = Array.from(document.querySelectorAll('.room'));
+    document.querySelector('.price-down').addEventListener('click', () => {
+        arr = roomsArr.sort((a, b) => b.dataset.price - a.dataset.price);
+        arr.forEach(room => rooms.appendChild(room));
+    })
+    document.querySelector('.price-up').addEventListener('click', () => {
+        arr = roomsArr.sort((a, b) => a.dataset.price - b.dataset.price);
+        arr.forEach(room => rooms.appendChild(room));
+    })
+    document.querySelector('.square-up').addEventListener('click', () => {
+        arr = roomsArr.sort((a, b) => a.dataset.square - b.dataset.square);
+        arr.forEach(room => rooms.appendChild(room));
+    })
+    document.querySelector('.square-down').addEventListener('click', () => {
+        arr = roomsArr.sort((a, b) => b.dataset.square - a.dataset.square);
+        arr.forEach(room => rooms.appendChild(room));
     })
 })
