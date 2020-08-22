@@ -159,3 +159,18 @@ document.addEventListener('DOMContentLoaded', function() {
         })
     })
 })
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('.sort__btn').addEventListener('click', () => {
+        document.querySelector('.sort__options').style.display = "block";
+        document.querySelector('.sort__arrow').classList.add('rotate-arrow');
+    })
+
+    document.querySelectorAll('.sort__option').forEach(option => {
+        option.addEventListener('click', () => {
+            document.querySelector('.sort__btn').innerHTML = option.innerHTML;
+            document.querySelector('.sort__options').style.display = "none";
+            document.querySelector('.sort__arrow').classList.remove('rotate-arrow');
+        })
+    })
+})

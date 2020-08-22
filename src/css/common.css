@@ -72,6 +72,12 @@ a {
     text-decoration: none;
 }
 
+main {
+    flex: 1;
+    padding-top: 60px;
+    padding-bottom: 150px;
+}
+
 h1 {
     margin-top: 0;
     margin-bottom: 60px;
@@ -85,4 +91,5 @@ h1 {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    position: relative;
 }

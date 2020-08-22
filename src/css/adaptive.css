@@ -68,6 +68,19 @@
         margin-left: 10px;
         margin-bottom: 10px;
     }    
+
+    .sort {
+        position: relative;
+        top: unset;
+        display: flex;
+        justify-content: flex-end;
+        margin-bottom: 30px;
+    }
+
+    .sort__options {
+        left: unset;
+        width: 175px;
+    }
 }
 
 @media (max-width: 640px) {
