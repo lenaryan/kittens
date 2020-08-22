@@ -133,3 +133,20 @@ document.addEventListener('DOMContentLoaded', function() {
         document.querySelector('.header__cross').style.display = "none";
     })
 })
+
+//if input price value is less than min value,
+//set the value equal to the min one
+//if input price value is more than max value,
+//set the value equal to the max one
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.filter__input').forEach(filterInput => {
+        filterInput.addEventListener('change', () => {
+            if (filterInput.value < parseInt(filterInput.getAttribute('min'))) {
+                filterInput.value = parseInt(filterInput.getAttribute('min'));
+            }
+            if (filterInput.value > parseInt(filterInput.getAttribute('max'))) {
+                filterInput.value = parseInt(filterInput.getAttribute('max'));
+            }
+        });
+    })
+})
