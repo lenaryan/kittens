@@ -7,92 +7,75 @@ document.addEventListener('DOMContentLoaded', function() {
     let resetBtn = document.querySelector('.reset-btn');
 
     document.querySelector('.apply-btn').addEventListener('click', () => {
-        rooms.forEach(room => {
-            room.classList.remove("show-room");
-            if (!room.classList.contains("hide-room")) {
-                room.classList.add("hide-room");
-                room.style.display = "none";
-            }
-        })
+        let filteredRooms = null;
+        let checkedSquare = []; //an array for selected square elements
+        let checkedEquip = []; //an array for selected equipment elements
+        let priceFrom = 100;
+        let priceTo = 600;
 
         squareElems = document.querySelectorAll('.filter__block--square .filter__check:checked');
         equipElems = document.querySelectorAll('.filter__block--equip .filter__check:checked');
 
-        //selected square part only
-        if (squareElems.length && !equipElems.length && !minPrice.value && !maxPrice.value) {
-            let checkedSquare = [];
-
-            //get an array of selected squares
-            squareElems.forEach(elem => checkedSquare.push(elem.dataset.square));
-
-            rooms.forEach(room => {
-                if (checkedSquare.includes(room.dataset.square)) {
-                    room.style.display = "flex";
-                    room.classList.add('show-room');
-                    room.classList.remove('hide-room');
-                }  
-            })
+        if (minPrice.value) {
+            priceFrom = minPrice.value;
         }
 
-        //filled in price part only
-        if ((minPrice.value || maxPrice.value) && !squareElems.length && !equipElems.length) {
-            if (minPrice.value && maxPrice.value) {
-                rooms.forEach(room => {
-                    if ((room.dataset.price < minPrice.value) || (room.dataset.price > maxPrice.value)) {
-                        room.classList.add("hide-room");
-                        room.classList.remove('show-room');
-                        room.style.display = "none";
-                    } else {
-                        room.classList.remove("hide-room");
-                        room.classList.add('show-room');
-                        room.style.display = "flex";
-                    }
-                })
-            } else if (minPrice.value) {
-                rooms.forEach(room => {
-                    if (room.dataset.price < minPrice.value) {
-                        room.classList.add("hide-room");
-                        room.classList.remove('show-room');
-                        room.style.display = "none";
-                    } else {
-                        room.classList.remove("hide-room");
-                        room.classList.add('show-room');
-                        room.style.display = "flex";
-                    }
-                })
-            } else if (maxPrice.value) {
-                rooms.forEach(room => {
-                    if (room.dataset.price > maxPrice.value) {
-                        room.classList.add("hide-room");
-                        room.classList.remove('show-room');
-                        room.style.display = "none";
-                    } else {
-                        room.classList.remove("hide-room");
-                        room.classList.add('show-room');
-                        room.style.display = "flex";
-                    }
-                })
-            }
+        if (maxPrice.value) {
+            priceTo = maxPrice.value;
         }
 
-        //selected equipment part only
-        if (equipElems.length && !squareElems.length && !minPrice.value && !maxPrice.value) {
-            let checkedEquip = [];
-
-            //get an array of selected equipment
-            equipElems.forEach(elem => checkedEquip.push(elem.dataset.equip));
-
-            rooms.forEach(room => {
-                if (checkedEquip.some((index) => room.dataset.equip.includes(index))) {
-                    room.style.display = "flex";
-                    room.classList.add('show-room');
-                    room.classList.remove('hide-room');
-                }  
-            })
-        }
-
+        //if filters are not empty
         if (squareElems.length || equipElems.length || minPrice.value || maxPrice.value) {
             resetBtn.style.display = 'block';
+
+            rooms.forEach(room => {
+                room.classList.remove("show-room");
+                if (!room.classList.contains("hide-room")) {
+                    room.classList.add("hide-room");
+                    room.style.display = "none";
+                }
+            })
+
+            //if only price is filled in
+            if ((minPrice.value || maxPrice.value) && !squareElems.length && !equipElems.length) {
+                filteredRooms = Array.from(rooms).filter(room => (room.dataset.price >= priceFrom) && (room.dataset.price <= priceTo));
+            } else {
+            
+                //get an array of selected squares
+                squareElems.forEach(elem => checkedSquare.push(elem.dataset.square));
+
+                //get an array of selected equipment
+                equipElems.forEach(elem => checkedEquip.push(elem.dataset.equip));
+
+                if (squareElems.length && equipElems.length) {
+
+                    //if square and equipment blocks checked
+                    filteredRooms = Array.from(rooms).filter(room => checkedSquare.includes(room.dataset.square) 
+                        && checkedEquip.some((index) => room.dataset.equip.includes(index))
+                        && (room.dataset.price >= priceFrom) && (room.dataset.price <= priceTo));
+                } else if (!squareElems.length && equipElems.length) {
+
+                    //if the equipment block checked
+                    filteredRooms = Array.from(rooms).filter(room => checkedEquip.some((index) => room.dataset.equip.includes(index))
+                        && (room.dataset.price >= priceFrom) && (room.dataset.price <= priceTo));
+                } else if (squareElems.length && !equipElems.length) {
+
+                    //if the square block checked
+                    filteredRooms = Array.from(rooms).filter(room => checkedSquare.includes(room.dataset.square)
+                        && (room.dataset.price >= priceFrom) && (room.dataset.price <= priceTo));
+                }
+
+            }
+            
+            //show filtered rooms
+            rooms.forEach(room => {
+                if (filteredRooms.includes(room)) {
+                    room.style.display = "flex";
+                    room.classList.add('show-room');
+                    room.classList.remove('hide-room');
+                }
+            })
+
         } else {
             //show rooms and hide the reset button
             //if filters are empty
@@ -103,6 +86,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 room.removeAttribute("style");
             })
         }
+
     })
 
     //reset filter
@@ -144,10 +128,10 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelectorAll('.filter__input').forEach(filterInput => {
         filterInput.addEventListener('change', () => {
-            if (filterInput.value < parseInt(filterInput.getAttribute('min'))) {
+            if (filterInput.value < parseInt(filterInput.getAttribute('min')) && filterInput.value) {
                 filterInput.value = parseInt(filterInput.getAttribute('min'));
             }
-            if (filterInput.value > parseInt(filterInput.getAttribute('max'))) {
+            if (filterInput.value > parseInt(filterInput.getAttribute('max')) && filterInput.value) {
                 filterInput.value = parseInt(filterInput.getAttribute('max'));
             }
         });
@@ -179,6 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
     })
 })
 
+//scripts for sorting rooms
 document.addEventListener('DOMContentLoaded', function() {
     let rooms = document.querySelector('.rooms');
     let arr = [];
